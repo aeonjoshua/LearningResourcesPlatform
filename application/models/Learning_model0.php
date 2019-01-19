@@ -8,7 +8,7 @@
 
     public function showdata()
     {
-      $query = $this->db->get('files');
+      $query = $this->db->get('projects_tbl');
       return $query->row_array();
     }
 
@@ -29,8 +29,8 @@
     public function get_projects()
     {
       $pdfs = array();
-      $this->db->select("title,course,filename,path,dateuploaded");
-      $this->db->from('files');
+      $this->db->select("*");
+      $this->db->from('projects_tbl');
       $query = $this->db->get();
 
       /*if ($query->num_rows())
